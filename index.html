@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="et">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WOIP WOODCRAFT</title>
 
   <style>
@@ -19,402 +18,619 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f1eee7;
-      color: #171815;
+      background: #f5f1e8;
+      color: #161712;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    :root {
+      --dark: #182019;
+      --green: #243126;
+      --accent: #8c6b3f;
+      --sand: #f5f1e8;
+      --text-soft: #6a6a62;
+      --white: #ffffff;
+      --border: rgba(22, 23, 18, 0.10);
     }
 
     header {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      padding: 30px 6%;
+      z-index: 1000;
+      padding: 22px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 10;
-      color: white;
+      background: rgba(18, 20, 16, 0.45);
+      backdrop-filter: blur(10px);
     }
 
     .logo {
-      font-size: 25px;
+      color: white;
+      font-size: 22px;
       font-weight: 700;
       letter-spacing: 5px;
     }
 
+    nav {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+    }
+
     nav a {
       color: white;
-      text-decoration: none;
-      margin-left: 32px;
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
+      opacity: 0.95;
+    }
+
+    .menu-button {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      padding: 9px 12px;
+      font-size: 18px;
+      cursor: pointer;
     }
 
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: 120px 8%;
-      position: relative;
-
+      padding: 140px 8% 90px;
+      color: white;
       background:
-        linear-gradient(
-          rgba(15, 18, 14, 0.38),
-          rgba(15, 18, 14, 0.48)
-        ),
-        url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=85");
-
+        linear-gradient(rgba(14, 16, 13, 0.45), rgba(14, 16, 13, 0.58)),
+        url("https://images.unsplash.com/photo-1616594039964-3b1c9bbdc6f1?auto=format&fit=crop&w=1800&q=80");
       background-size: cover;
       background-position: center;
-      color: white;
     }
 
-    .hero-content {
-      max-width: 820px;
+    .hero-inner {
+      max-width: 800px;
     }
 
-    .small-title {
-      font-size: 13px;
+    .eyebrow {
+      font-size: 12px;
       letter-spacing: 5px;
       text-transform: uppercase;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
+      opacity: 0.95;
     }
 
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(55px, 8vw, 115px);
       font-weight: normal;
-      line-height: 0.92;
-      letter-spacing: -3px;
-      margin-bottom: 30px;
+      font-size: clamp(54px, 9vw, 108px);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      margin-bottom: 26px;
     }
 
     .hero p {
-      max-width: 550px;
-      font-size: 19px;
-      line-height: 1.7;
+      max-width: 620px;
+      font-size: 20px;
+      line-height: 1.8;
       color: rgba(255,255,255,0.90);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 34px;
     }
 
     .button {
       display: inline-block;
-      margin-top: 38px;
-      padding: 17px 30px;
-      border: 1px solid white;
+      padding: 16px 26px;
+      border: 1px solid rgba(255,255,255,0.85);
       color: white;
-      text-decoration: none;
-      text-transform: uppercase;
       font-size: 12px;
-      letter-spacing: 3px;
-      transition: 0.3s;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      transition: 0.25s ease;
     }
 
     .button:hover {
       background: white;
-      color: #171815;
+      color: #141612;
+    }
+
+    .button.secondary {
+      border-color: rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.08);
     }
 
     section {
-      padding: 110px 8%;
+      padding: 100px 8%;
     }
 
-    .intro {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .intro-label {
-      text-transform: uppercase;
-      letter-spacing: 4px;
+    .section-label {
       font-size: 12px;
-      margin-bottom: 25px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
     }
 
     h2 {
       font-family: Georgia, "Times New Roman", serif;
       font-weight: normal;
-      font-size: clamp(40px, 5vw, 70px);
+      font-size: clamp(38px, 5vw, 68px);
       line-height: 1.05;
-      margin-bottom: 30px;
+      margin-bottom: 22px;
     }
 
-    .intro p {
+    .lead {
+      font-size: 18px;
       line-height: 1.9;
+      color: var(--text-soft);
+      max-width: 780px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .intro-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 36px;
+    }
+
+    .intro-card p {
       font-size: 17px;
-      color: #55564f;
-      max-width: 600px;
+      line-height: 1.9;
+      color: var(--text-soft);
     }
 
-    .intro img {
-      width: 100%;
-      height: 620px;
-      object-fit: cover;
+    .quote-box {
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: #7a796f;
+      letter-spacing: 0.5px;
     }
 
-    .dark {
-      background: #20231d;
-      color: #f5f2ea;
+    .dark-section {
+      background: var(--dark);
+      color: white;
     }
 
-    .services {
+    .dark-section .section-label {
+      color: #b89968;
+    }
+
+    .dark-section .lead {
+      color: rgba(255,255,255,0.78);
+    }
+
+    .archive-top {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 44px;
+      align-items: end;
+      margin-bottom: 40px;
+    }
+
+    .archive-note {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      padding: 28px;
+    }
+
+    .archive-note p {
+      font-size: 16px;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.82);
+    }
+
+    .archive-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 55px;
-      margin-top: 70px;
+      gap: 20px;
+    }
+
+    .archive-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+
+    .archive-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+      filter: saturate(0.92) contrast(1.02);
+    }
+
+    .archive-caption {
+      padding: 14px 16px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 30px;
     }
 
     .service-number {
+      color: var(--accent);
       font-size: 12px;
       letter-spacing: 2px;
-      opacity: 0.6;
-      margin-bottom: 25px;
+      margin-bottom: 14px;
     }
 
-    .service h3 {
+    .service-card h3 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 34px;
+      font-size: 30px;
       font-weight: normal;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
-    .service p {
+    .service-card p {
+      font-size: 16px;
       line-height: 1.8;
-      color: #c5c5bc;
+      color: var(--text-soft);
     }
 
     .statement {
       text-align: center;
-      padding-top: 150px;
-      padding-bottom: 150px;
+      padding-top: 130px;
+      padding-bottom: 130px;
+      background: #ede7db;
     }
 
     .statement p {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(38px, 5vw, 72px);
-      max-width: 1100px;
+      font-size: clamp(34px, 5vw, 64px);
+      max-width: 980px;
       margin: auto;
-      line-height: 1.18;
+      line-height: 1.2;
+      color: #1b1d18;
+    }
+
+    .contact-section {
+      background: #11130f;
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .contact-box {
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .contact-box h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: normal;
+      margin-bottom: 16px;
+    }
+
+    .contact-box p {
+      color: rgba(255,255,255,0.78);
+      line-height: 1.9;
+      font-size: 16px;
     }
 
     footer {
-      background: #121310;
-      color: #aaa99f;
-      padding: 60px 8%;
+      background: #0d0f0c;
+      color: rgba(255,255,255,0.68);
+      padding: 30px 8%;
+      border-top: 1px solid rgba(255,255,255,0.08);
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
       font-size: 13px;
     }
 
-    .footer-logo {
-      color: white;
-      font-size: 19px;
-      letter-spacing: 4px;
+    @media (max-width: 920px) {
+      .intro-grid,
+      .archive-top,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .archive-grid,
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
-    @media (max-width: 800px) {
-
+    @media (max-width: 760px) {
       header {
-        padding: 25px 6%;
+        padding: 18px 5%;
+      }
+
+      .logo {
+        font-size: 18px;
+        letter-spacing: 4px;
+      }
+
+      .menu-button {
+        display: block;
       }
 
       nav {
+        position: absolute;
+        top: 68px;
+        left: 5%;
+        right: 5%;
         display: none;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(20, 23, 18, 0.98);
+        border: 1px solid rgba(255,255,255,0.08);
       }
 
-      .intro {
+      nav.show {
+        display: flex;
+      }
+
+      nav a {
+        padding: 16px 18px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .hero {
+        padding: 130px 7% 75px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 80px 7%;
+      }
+
+      .archive-grid,
+      .services-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
       }
 
-      .intro img {
-        height: 430px;
-      }
-
-      .services {
-        grid-template-columns: 1fr;
+      .statement {
+        padding-top: 90px;
+        padding-bottom: 90px;
       }
 
       footer {
         flex-direction: column;
-        gap: 20px;
-        text-align: center;
       }
     }
   </style>
 </head>
-
 <body>
 
-<header>
+  <header>
+    <div class="logo">WOIP WOODCRAFT</div>
 
-  <div class="logo">
-    WOIP WOODCRAFT
-  </div>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
 
-  <nav>
-    <a href="#furniture">Furniture</a>
-    <a href="#bespoke">Bespoke</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <nav id="mobileNav">
+      <a href="#about">About</a>
+      <a href="#archive">Archive</a>
+      <a href="#craft">Craft</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-</header>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Crafted in Estonia</div>
 
+      <h1>Furniture<br>with memory.</h1>
 
-<section class="hero">
+      <p>
+        Ajatu mööbel, milles saavad kokku põhjamaine disain,
+        puidu iseloom ja päris käsitöötraditsioon.
+      </p>
 
-  <div class="hero-content">
+      <div class="hero-buttons">
+        <a href="#archive" class="button">View archive</a>
+        <a href="#contact" class="button secondary">Get in touch</a>
+      </div>
+    </div>
+  </section>
 
-    <div class="small-title">
-      Crafted in Estonia
+  <section id="about">
+    <div class="section-label">WOIP WOODCRAFT</div>
+
+    <div class="intro-grid">
+      <div>
+        <h2>Built with character. Rooted in craft.</h2>
+        <p class="lead">
+          WOIP WOODCRAFT ei ole lihtsalt mööbel. See on lähenemine, kus
+          tähtsad on proportsioon, kestvus, materjal ja rahulikult läbi mõeldud teostus.
+          Meie jaoks peab ese elama ruumis kaua ja väärikalt.
+        </p>
+      </div>
+
+      <div class="intro-card">
+        <p>
+          Selle lehe üks oluline osa on töökoja pärand. Allpool olevad käsitsi tehtud
+          märkmed ja joonestused põhinevad päris mööbliesemetel, mida minu isa valmistas.
+          Need lehed kannavad endas töövõtteid, mõõte, kogemust ja suhtumist,
+          millest WOIP WOODCRAFT samuti kasvab.
+        </p>
+
+        <div class="quote-box">
+          Drawn by hand. Built to last.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section" id="archive">
+    <div class="archive-top">
+      <div>
+        <div class="section-label">Workshop archive</div>
+        <h2>From sketch to furniture.</h2>
+      </div>
+
+      <div class="archive-note">
+        <p>
+          Need arhiivilehed ei ole dekoratsioon. Need on päris töökoja märkmed —
+          mõõdud, lõiked, sahtlid, konstruktsioonid ja mõtlemine enne valmimist.
+          Just selline praktiline, aus ja põhjalik käsitöö on WOIP WOODCRAFTi taust.
+        </p>
+      </div>
     </div>
 
-    <h1>
-      Furniture<br>
-      with character.
-    </h1>
+    <div class="archive-grid">
+      <div class="archive-item">
+        <img src="isa-1.jpg" alt="Isa joonistus 1">
+        <div class="archive-caption">Front elevation</div>
+      </div>
 
-    <p>
-      Ajatu mööbel, milles saavad kokku põhjamaine disain,
-      kvaliteetne puit ja käsitöö.
+      <div class="archive-item">
+        <img src="isa-2.jpg" alt="Isa joonistus 2">
+        <div class="archive-caption">Side view</div>
+      </div>
+
+      <div class="archive-item">
+        <img src="isa-3.jpg" alt="Isa joonistus 3">
+        <div class="archive-caption">Workshop notes</div>
+      </div>
+
+      <div class="archive-item">
+        <img src="isa-4.jpg" alt="Isa joonistus 4">
+        <div class="archive-caption">Drawer detail</div>
+      </div>
+
+      <div class="archive-item">
+        <img src="isa-5.jpg" alt="Isa joonistus 5">
+        <div class="archive-caption">Cutting plan</div>
+      </div>
+
+      <div class="archive-item">
+        <img src="isa-6.jpg" alt="Isa joonistus 6">
+        <div class="archive-caption">Measured by hand</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="craft">
+    <div class="section-label">What we do</div>
+    <h2>Furniture made for real spaces.</h2>
+    <p class="lead">
+      WOIP WOODCRAFT keskendub ajatule mööblile, eritellimustele ja detailidele,
+      mis peavad vastu nii kasutuses kui ka visuaalselt.
     </p>
 
-    <a href="#furniture" class="button">
-      Discover our work
-    </a>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <h3>Furniture</h3>
+        <p>
+          Riiulid, lauad, kapid ja teised mööbliesemed, mis on tehtud selge vormi
+          ja pika kasutuse jaoks.
+        </p>
+      </div>
 
-  </div>
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <h3>Bespoke</h3>
+        <p>
+          Eritellimusel lahendused, mis arvestavad ruumi, mõõte, materjale
+          ja inimese tegelikke vajadusi.
+        </p>
+      </div>
 
-</section>
-
-
-<section class="intro" id="about">
-
-  <div>
-
-    <div class="intro-label">
-      WOIP WOODCRAFT
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <h3>Craft</h3>
+        <p>
+          Tööviis, kus konstruktsioon, tunnetus ja materjalivalik on sama tähtsad
+          kui valmis eseme välimus.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <h2>
-      Made to become part of your home.
-    </h2>
-
+  <section class="statement">
     <p>
-      Me ei valmista lihtsalt mööblit. Loome esemeid,
-      mis on mõeldud kasutamiseks aastakümneid.
-      Selged vormid, naturaalsed materjalid ja detailid,
-      mille ilu kasvab koos ajaga.
+      Wood. Craft. Character.<br>
+      A quieter kind of furniture.
     </p>
+  </section>
 
-  </div>
+  <section class="contact-section" id="contact">
+    <div class="section-label">Contact</div>
 
-  <img
-    src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85"
-    alt="WOIP WOODCRAFT furniture"
-  >
-
-</section>
-
-
-<section class="dark" id="furniture">
-
-  <div class="intro-label">
-    What we make
-  </div>
-
-  <h2>
-    Furniture built around you.
-  </h2>
-
-  <div class="services">
-
-    <div class="service">
-
-      <div class="service-number">
-        01
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h3>WOIP WOODCRAFT</h3>
+        <p>
+          Kui soovid eritellimusmööblit, koostööd või küsida mõne eseme kohta,
+          võta ühendust.
+        </p>
       </div>
 
-      <h3>
-        Furniture
-      </h3>
-
-      <p>
-        Lauad, riiulid, kapid ja teised ajatuks loodud
-        WOIP WOODCRAFTi mööbliesemed.
-      </p>
-
-    </div>
-
-    <div class="service" id="bespoke">
-
-      <div class="service-number">
-        02
+      <div class="contact-box">
+        <h3>Get in touch</h3>
+        <p>
+          Estonia<br>
+          hello@woipwoodcraft.com<br>
+          Instagram coming soon
+        </p>
       </div>
-
-      <h3>
-        Bespoke
-      </h3>
-
-      <p>
-        Eritellimusel valmistatud mööbel,
-        mis arvestab ruumi, materjalide ja
-        kliendi soovidega.
-      </p>
-
     </div>
+  </section>
 
-    <div class="service">
+  <footer>
+    <div>WOIP WOODCRAFT</div>
+    <div>Crafted in Estonia</div>
+    <div>© 2026 WOIP WOODCRAFT</div>
+  </footer>
 
-      <div class="service-number">
-        03
-      </div>
-
-      <h3>
-        Craft
-      </h3>
-
-      <p>
-        Traditsiooniline puutöö ja kaasaegne disain
-        ühes tervikus.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="statement">
-
-  <p>
-    Wood. Craft. Character.<br>
-    Made in Estonia.
-  </p>
-
-</section>
-
-
-<footer id="contact">
-
-  <div class="footer-logo">
-    WOIP WOODCRAFT
-  </div>
-
-  <div>
-    Estonia · hello@woipwoodcraft.com
-  </div>
-
-  <div>
-    © 2026 WOIP WOODCRAFT
-  </div>
-
-</footer>
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("mobileNav");
+      nav.classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>
