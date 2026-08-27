@@ -6,6 +6,8 @@
   <title>WOIP WOODCRAFT</title>
 
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&display=swap");
+
     * {
       margin: 0;
       padding: 0;
@@ -150,12 +152,14 @@
       opacity: 0.95;
     }
 
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: normal;
-      font-size: clamp(54px, 9vw, 108px);
-      line-height: 0.95;
-      letter-spacing: -2px;
+    .hero h1 {
+      font-family: "Bodoni Moda", Didot, "Bodoni MT", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(58px, 7vw, 100px);
+      line-height: 0.88;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      white-space: nowrap;
       margin-bottom: 26px;
     }
 
@@ -540,6 +544,13 @@
         font-size: 18px;
       }
 
+      .hero h1 {
+        max-width: 8.5ch;
+        font-size: clamp(52px, 15vw, 72px);
+        line-height: 0.92;
+        white-space: normal;
+      }
+
       section {
         padding: 80px 7%;
       }
@@ -624,9 +635,9 @@
     <div class="hero-inner">
       <div class="eyebrow" data-i18n="eyebrow">Valmistatud Eestis</div>
 
-      <h1 data-i18n-html="heroTitle">Mööbel,<br>millel on mälu.</h1>
+      <h1 data-i18n-html="heroTitle">PUIT. VORM. AEG.</h1>
 
-      <p data-i18n="heroLead">Ajatu mööbel, milles saavad kokku põhjamaine disain, puidu iseloom ja päris käsitöötraditsioon.</p>
+      <p data-i18n="heroLead">Väärispuit ja käsitöö, millest sünnib mööbel, mis kestab.</p>
 
       <div class="hero-buttons">
         <a href="#archive" class="button" data-i18n="viewArchive">Vaata arhiivi</a>
@@ -775,7 +786,7 @@
     const translations = {
       et: {
         navAbout: "Meist", navArchive: "Arhiiv", navCraft: "Meie töö", navContact: "Kontakt",
-        eyebrow: "Valmistatud Eestis", heroTitle: "Mööbel,<br>millel on mälu.", heroLead: "Ajatu mööbel, milles saavad kokku põhjamaine disain, puidu iseloom ja päris käsitöötraditsioon.",
+        eyebrow: "Valmistatud Eestis", heroTitle: "PUIT. VORM. AEG.", heroLead: "Väärispuit ja käsitöö, millest sünnib mööbel, mis kestab.",
         viewArchive: "Vaata arhiivi", getInTouch: "Võta ühendust", aboutTitle: "Iseloomuga loodud. Käsitöös juurdunud.",
         aboutLead: "WOIP WOODCRAFT ei ole lihtsalt mööbel. See on lähenemine, kus tähtsad on proportsioon, kestvus, materjal ja rahulikult läbi mõeldud teostus. Meie jaoks peab ese elama ruumis kaua ja väärikalt.",
         heritage: "Selle lehe üks oluline osa on töökoja pärand. Allpool olevad käsitsi tehtud märkmed ja joonestused põhinevad päris mööbliesemetel, mida minu isa valmistas. Need lehed kannavad endas töövõtteid, mõõte, kogemust ja suhtumist, millest WOIP WOODCRAFT samuti kasvab.",
@@ -796,7 +807,7 @@
       },
       en: {
         navAbout: "About", navArchive: "Archive", navCraft: "Craft", navContact: "Contact",
-        eyebrow: "Crafted in Estonia", heroTitle: "Furniture<br>with memory.", heroLead: "Timeless furniture where Nordic design, the character of wood and a genuine craft tradition come together.",
+        eyebrow: "Crafted in Estonia", heroTitle: "WOOD. FORM. TIME.", heroLead: "Fine wood and craftsmanship, shaped into furniture made to last.",
         viewArchive: "View archive", getInTouch: "Get in touch", aboutTitle: "Built with character. Rooted in craft.",
         aboutLead: "WOIP WOODCRAFT is more than furniture. It is an approach grounded in proportion, durability, material and thoughtfully considered execution. We believe every piece should live in its space with dignity for years.",
         heritage: "An important part of this site is the workshop legacy. The handwritten notes and drawings below are based on real furniture made by my father. These pages carry techniques, measurements, experience and an attitude from which WOIP WOODCRAFT continues to grow.",
@@ -817,7 +828,7 @@
       },
       fi: {
         navAbout: "Meistä", navArchive: "Arkisto", navCraft: "Työmme", navContact: "Yhteys",
-        eyebrow: "Valmistettu Virossa", heroTitle: "Huonekaluja,<br>joilla on muisti.", heroLead: "Ajattomia huonekaluja, joissa kohtaavat pohjoismainen muotoilu, puun luonne ja aito käsityöperinne.",
+        eyebrow: "Valmistettu Virossa", heroTitle: "PUU. MUOTO. AIKA.", heroLead: "Arvopuu ja käsityö, joista syntyy kestäviä huonekaluja.",
         viewArchive: "Katso arkisto", getInTouch: "Ota yhteyttä", aboutTitle: "Luonteella tehty. Käsityöhön juurtunut.",
         aboutLead: "WOIP WOODCRAFT on enemmän kuin huonekaluja. Se on ajattelutapa, jossa mittasuhteet, kestävyys, materiaali ja harkittu toteutus ovat keskeisiä. Meille esineen kuuluu elää tilassa pitkään ja arvokkaasti.",
         heritage: "Tärkeä osa tätä sivustoa on verstasperintö. Alla olevat käsinkirjoitetut muistiinpanot ja piirustukset perustuvat isäni valmistamiin oikeisiin huonekaluihin. Näissä sivuissa elävät työtavat, mitat, kokemus ja asenne, joista myös WOIP WOODCRAFT kasvaa.",
