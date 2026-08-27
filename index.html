@@ -70,6 +70,43 @@
       align-items: center;
     }
 
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .language-selector {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      padding: 3px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 2px;
+    }
+
+    .language-button {
+      border: 0;
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      padding: 7px 8px;
+      font: inherit;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+    }
+
+    .language-button:hover,
+    .language-button:focus-visible {
+      color: white;
+      outline: none;
+    }
+
+    .language-button.active {
+      background: white;
+      color: var(--dark);
+    }
+
     nav a {
       color: white;
       font-size: 12px;
@@ -96,7 +133,7 @@
       color: white;
       background:
         linear-gradient(rgba(14, 16, 13, 0.45), rgba(14, 16, 13, 0.58)),
-        url("https://images.unsplash.com/photo-1616594039964-3b1c9bbdc6f1?auto=format&fit=crop&w=1800&q=80");
+        url("hero-furniture.jpg");
       background-size: cover;
       background-position: center;
     }
@@ -393,6 +430,19 @@
         display: block;
       }
 
+      .header-actions {
+        gap: 10px;
+      }
+
+      .language-selector {
+        order: -1;
+      }
+
+      .language-button {
+        padding: 7px 6px;
+        font-size: 10px;
+      }
+
       nav {
         position: absolute;
         top: 68px;
@@ -447,30 +497,35 @@
   <header>
     <div class="logo">WOIP WOODCRAFT</div>
 
-    <button class="menu-button" onclick="toggleMenu()">☰</button>
+    <div class="header-actions">
+      <nav id="mobileNav">
+        <a href="#about" data-i18n="navAbout">Meist</a>
+        <a href="#archive" data-i18n="navArchive">Arhiiv</a>
+        <a href="#craft" data-i18n="navCraft">Meie töö</a>
+        <a href="#contact" data-i18n="navContact">Kontakt</a>
+      </nav>
 
-    <nav id="mobileNav">
-      <a href="#about">About</a>
-      <a href="#archive">Archive</a>
-      <a href="#craft">Craft</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <div class="language-selector" role="group" aria-label="Language">
+        <button class="language-button" type="button" data-lang="et" aria-pressed="true">ET</button>
+        <button class="language-button" type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button class="language-button" type="button" data-lang="fi" aria-pressed="false">FI</button>
+      </div>
+
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Ava menüü">☰</button>
+    </div>
   </header>
 
   <section class="hero">
     <div class="hero-inner">
-      <div class="eyebrow">Crafted in Estonia</div>
+      <div class="eyebrow" data-i18n="eyebrow">Valmistatud Eestis</div>
 
-      <h1>Furniture<br>with memory.</h1>
+      <h1 data-i18n-html="heroTitle">Mööbel,<br>millel on mälu.</h1>
 
-      <p>
-        Ajatu mööbel, milles saavad kokku põhjamaine disain,
-        puidu iseloom ja päris käsitöötraditsioon.
-      </p>
+      <p data-i18n="heroLead">Ajatu mööbel, milles saavad kokku põhjamaine disain, puidu iseloom ja päris käsitöötraditsioon.</p>
 
       <div class="hero-buttons">
-        <a href="#archive" class="button">View archive</a>
-        <a href="#contact" class="button secondary">Get in touch</a>
+        <a href="#archive" class="button" data-i18n="viewArchive">Vaata arhiivi</a>
+        <a href="#contact" class="button secondary" data-i18n="getInTouch">Võta ühendust</a>
       </div>
     </div>
   </section>
@@ -480,24 +535,15 @@
 
     <div class="intro-grid">
       <div>
-        <h2>Built with character. Rooted in craft.</h2>
-        <p class="lead">
-          WOIP WOODCRAFT ei ole lihtsalt mööbel. See on lähenemine, kus
-          tähtsad on proportsioon, kestvus, materjal ja rahulikult läbi mõeldud teostus.
-          Meie jaoks peab ese elama ruumis kaua ja väärikalt.
-        </p>
+        <h2 data-i18n="aboutTitle">Iseloomuga loodud. Käsitöös juurdunud.</h2>
+        <p class="lead" data-i18n="aboutLead">WOIP WOODCRAFT ei ole lihtsalt mööbel. See on lähenemine, kus tähtsad on proportsioon, kestvus, materjal ja rahulikult läbi mõeldud teostus. Meie jaoks peab ese elama ruumis kaua ja väärikalt.</p>
       </div>
 
       <div class="intro-card">
-        <p>
-          Selle lehe üks oluline osa on töökoja pärand. Allpool olevad käsitsi tehtud
-          märkmed ja joonestused põhinevad päris mööbliesemetel, mida minu isa valmistas.
-          Need lehed kannavad endas töövõtteid, mõõte, kogemust ja suhtumist,
-          millest WOIP WOODCRAFT samuti kasvab.
-        </p>
+        <p data-i18n="heritage">Selle lehe üks oluline osa on töökoja pärand. Allpool olevad käsitsi tehtud märkmed ja joonestused põhinevad päris mööbliesemetel, mida minu isa valmistas. Need lehed kannavad endas töövõtteid, mõõte, kogemust ja suhtumist, millest WOIP WOODCRAFT samuti kasvab.</p>
 
         <div class="quote-box">
-          Drawn by hand. Built to last.
+          <span data-i18n="quote">Käsitsi joonistatud. Kestma loodud.</span>
         </div>
       </div>
     </div>
@@ -506,131 +552,177 @@
   <section class="dark-section" id="archive">
     <div class="archive-top">
       <div>
-        <div class="section-label">Workshop archive</div>
-        <h2>From sketch to furniture.</h2>
+        <div class="section-label" data-i18n="archiveLabel">Töökoja arhiiv</div>
+        <h2 data-i18n="archiveTitle">Joonisest mööblini.</h2>
       </div>
 
       <div class="archive-note">
-        <p>
-          Need arhiivilehed ei ole dekoratsioon. Need on päris töökoja märkmed —
-          mõõdud, lõiked, sahtlid, konstruktsioonid ja mõtlemine enne valmimist.
-          Just selline praktiline, aus ja põhjalik käsitöö on WOIP WOODCRAFTi taust.
-        </p>
+        <p data-i18n="archiveLead">Need arhiivilehed ei ole dekoratsioon. Need on päris töökoja märkmed — mõõdud, lõiked, sahtlid, konstruktsioonid ja mõtlemine enne valmimist. Just selline praktiline, aus ja põhjalik käsitöö on WOIP WOODCRAFTi taust.</p>
       </div>
     </div>
 
     <div class="archive-grid">
       <div class="archive-item">
         <img src="isa-1.jpg" alt="Isa joonistus 1">
-        <div class="archive-caption">Front elevation</div>
+        <div class="archive-caption" data-i18n="caption1">Eestvaade</div>
       </div>
 
       <div class="archive-item">
         <img src="isa-2.jpg" alt="Isa joonistus 2">
-        <div class="archive-caption">Side view</div>
+        <div class="archive-caption" data-i18n="caption2">Külgvaade</div>
       </div>
 
       <div class="archive-item">
         <img src="isa-3.jpg" alt="Isa joonistus 3">
-        <div class="archive-caption">Workshop notes</div>
+        <div class="archive-caption" data-i18n="caption3">Töökoja märkmed</div>
       </div>
 
       <div class="archive-item">
         <img src="isa-4.jpg" alt="Isa joonistus 4">
-        <div class="archive-caption">Drawer detail</div>
+        <div class="archive-caption" data-i18n="caption4">Sahtli detail</div>
       </div>
 
       <div class="archive-item">
         <img src="isa-5.jpg" alt="Isa joonistus 5">
-        <div class="archive-caption">Cutting plan</div>
+        <div class="archive-caption" data-i18n="caption5">Lõikeplaan</div>
       </div>
 
       <div class="archive-item">
         <img src="isa-6.jpg" alt="Isa joonistus 6">
-        <div class="archive-caption">Measured by hand</div>
+        <div class="archive-caption" data-i18n="caption6">Käsitsi mõõdetud</div>
       </div>
     </div>
   </section>
 
   <section id="craft">
-    <div class="section-label">What we do</div>
-    <h2>Furniture made for real spaces.</h2>
-    <p class="lead">
-      WOIP WOODCRAFT keskendub ajatule mööblile, eritellimustele ja detailidele,
-      mis peavad vastu nii kasutuses kui ka visuaalselt.
-    </p>
+    <div class="section-label" data-i18n="craftLabel">Mida me teeme</div>
+    <h2 data-i18n="craftTitle">Mööbel päris ruumidesse.</h2>
+    <p class="lead" data-i18n="craftLead">WOIP WOODCRAFT keskendub ajatule mööblile, eritellimustele ja detailidele, mis peavad vastu nii kasutuses kui ka visuaalselt.</p>
 
     <div class="services-grid">
       <div class="service-card">
         <div class="service-number">01</div>
-        <h3>Furniture</h3>
-        <p>
-          Riiulid, lauad, kapid ja teised mööbliesemed, mis on tehtud selge vormi
-          ja pika kasutuse jaoks.
-        </p>
+        <h3 data-i18n="service1Title">Mööbel</h3>
+        <p data-i18n="service1Text">Riiulid, lauad, kapid ja teised mööbliesemed, mis on tehtud selge vormi ja pika kasutuse jaoks.</p>
       </div>
 
       <div class="service-card">
         <div class="service-number">02</div>
-        <h3>Bespoke</h3>
-        <p>
-          Eritellimusel lahendused, mis arvestavad ruumi, mõõte, materjale
-          ja inimese tegelikke vajadusi.
-        </p>
+        <h3 data-i18n="service2Title">Eritellimus</h3>
+        <p data-i18n="service2Text">Eritellimusel lahendused, mis arvestavad ruumi, mõõte, materjale ja inimese tegelikke vajadusi.</p>
       </div>
 
       <div class="service-card">
         <div class="service-number">03</div>
-        <h3>Craft</h3>
-        <p>
-          Tööviis, kus konstruktsioon, tunnetus ja materjalivalik on sama tähtsad
-          kui valmis eseme välimus.
-        </p>
+        <h3 data-i18n="service3Title">Käsitöö</h3>
+        <p data-i18n="service3Text">Tööviis, kus konstruktsioon, tunnetus ja materjalivalik on sama tähtsad kui valmis eseme välimus.</p>
       </div>
     </div>
   </section>
 
   <section class="statement">
-    <p>
-      Wood. Craft. Character.<br>
-      A quieter kind of furniture.
-    </p>
+    <p data-i18n-html="statement">Puit. Käsitöö. Iseloom.<br>Vaiksemat laadi mööbel.</p>
   </section>
 
   <section class="contact-section" id="contact">
-    <div class="section-label">Contact</div>
+    <div class="section-label" data-i18n="contactLabel">Kontakt</div>
 
     <div class="contact-grid">
       <div class="contact-box">
         <h3>WOIP WOODCRAFT</h3>
-        <p>
-          Kui soovid eritellimusmööblit, koostööd või küsida mõne eseme kohta,
-          võta ühendust.
-        </p>
+        <p data-i18n="contactText">Kui soovid eritellimusmööblit, koostööd või küsida mõne eseme kohta, võta ühendust.</p>
       </div>
 
       <div class="contact-box">
-        <h3>Get in touch</h3>
-        <p>
-          Estonia<br>
-          hello@woipwoodcraft.com<br>
-          Instagram coming soon
-        </p>
+        <h3 data-i18n="getInTouch">Võta ühendust</h3>
+        <p data-i18n-html="contactDetails">Eesti<br>hello@woipwoodcraft.com<br>Instagram peagi tulekul</p>
       </div>
     </div>
   </section>
 
   <footer>
     <div>WOIP WOODCRAFT</div>
-    <div>Crafted in Estonia</div>
+    <div data-i18n="eyebrow">Valmistatud Eestis</div>
     <div>© 2026 WOIP WOODCRAFT</div>
   </footer>
 
+  <!-- Hero photo: GoodLifeConstruction / Unsplash, https://unsplash.com/photos/sVhNKstz7xU -->
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById("mobileNav");
-      nav.classList.toggle("show");
+    const translations = {
+      et: {
+        navAbout: "Meist", navArchive: "Arhiiv", navCraft: "Meie töö", navContact: "Kontakt",
+        eyebrow: "Valmistatud Eestis", heroTitle: "Mööbel,<br>millel on mälu.", heroLead: "Ajatu mööbel, milles saavad kokku põhjamaine disain, puidu iseloom ja päris käsitöötraditsioon.",
+        viewArchive: "Vaata arhiivi", getInTouch: "Võta ühendust", aboutTitle: "Iseloomuga loodud. Käsitöös juurdunud.",
+        aboutLead: "WOIP WOODCRAFT ei ole lihtsalt mööbel. See on lähenemine, kus tähtsad on proportsioon, kestvus, materjal ja rahulikult läbi mõeldud teostus. Meie jaoks peab ese elama ruumis kaua ja väärikalt.",
+        heritage: "Selle lehe üks oluline osa on töökoja pärand. Allpool olevad käsitsi tehtud märkmed ja joonestused põhinevad päris mööbliesemetel, mida minu isa valmistas. Need lehed kannavad endas töövõtteid, mõõte, kogemust ja suhtumist, millest WOIP WOODCRAFT samuti kasvab.",
+        quote: "Käsitsi joonistatud. Kestma loodud.", archiveLabel: "Töökoja arhiiv", archiveTitle: "Joonisest mööblini.", archiveLead: "Need arhiivilehed ei ole dekoratsioon. Need on päris töökoja märkmed — mõõdud, lõiked, sahtlid, konstruktsioonid ja mõtlemine enne valmimist. Just selline praktiline, aus ja põhjalik käsitöö on WOIP WOODCRAFTi taust.",
+        caption1: "Eestvaade", caption2: "Külgvaade", caption3: "Töökoja märkmed", caption4: "Sahtli detail", caption5: "Lõikeplaan", caption6: "Käsitsi mõõdetud",
+        craftLabel: "Mida me teeme", craftTitle: "Mööbel päris ruumidesse.", craftLead: "WOIP WOODCRAFT keskendub ajatule mööblile, eritellimustele ja detailidele, mis peavad vastu nii kasutuses kui ka visuaalselt.",
+        service1Title: "Mööbel", service1Text: "Riiulid, lauad, kapid ja teised mööbliesemed, mis on tehtud selge vormi ja pika kasutuse jaoks.", service2Title: "Eritellimus", service2Text: "Eritellimusel lahendused, mis arvestavad ruumi, mõõte, materjale ja inimese tegelikke vajadusi.", service3Title: "Käsitöö", service3Text: "Tööviis, kus konstruktsioon, tunnetus ja materjalivalik on sama tähtsad kui valmis eseme välimus.",
+        statement: "Puit. Käsitöö. Iseloom.<br>Vaiksemat laadi mööbel.", contactLabel: "Kontakt", contactText: "Kui soovid eritellimusmööblit, koostööd või küsida mõne eseme kohta, võta ühendust.", contactDetails: "Eesti<br>hello@woipwoodcraft.com<br>Instagram peagi tulekul", menuOpen: "Ava menüü", menuClose: "Sulge menüü"
+      },
+      en: {
+        navAbout: "About", navArchive: "Archive", navCraft: "Craft", navContact: "Contact",
+        eyebrow: "Crafted in Estonia", heroTitle: "Furniture<br>with memory.", heroLead: "Timeless furniture where Nordic design, the character of wood and a genuine craft tradition come together.",
+        viewArchive: "View archive", getInTouch: "Get in touch", aboutTitle: "Built with character. Rooted in craft.",
+        aboutLead: "WOIP WOODCRAFT is more than furniture. It is an approach grounded in proportion, durability, material and thoughtfully considered execution. We believe every piece should live in its space with dignity for years.",
+        heritage: "An important part of this site is the workshop legacy. The handwritten notes and drawings below are based on real furniture made by my father. These pages carry techniques, measurements, experience and an attitude from which WOIP WOODCRAFT continues to grow.",
+        quote: "Drawn by hand. Built to last.", archiveLabel: "Workshop archive", archiveTitle: "From sketch to furniture.", archiveLead: "These archive sheets are not decoration. They are genuine workshop notes — dimensions, cuts, drawers, structures and the thinking that happens before a piece is made. This practical, honest and thorough craft is the foundation of WOIP WOODCRAFT.",
+        caption1: "Front elevation", caption2: "Side view", caption3: "Workshop notes", caption4: "Drawer detail", caption5: "Cutting plan", caption6: "Measured by hand",
+        craftLabel: "What we do", craftTitle: "Furniture made for real spaces.", craftLead: "WOIP WOODCRAFT focuses on timeless furniture, bespoke work and details that endure both in use and in appearance.",
+        service1Title: "Furniture", service1Text: "Shelves, tables, cabinets and other pieces made with clear form and a long life in mind.", service2Title: "Bespoke", service2Text: "Custom solutions shaped around the space, dimensions, materials and the real needs of the person using them.", service3Title: "Craft", service3Text: "A way of working where structure, feel and material choice matter as much as the finished piece.",
+        statement: "Wood. Craft. Character.<br>A quieter kind of furniture.", contactLabel: "Contact", contactText: "For bespoke furniture, collaboration or questions about a piece, get in touch.", contactDetails: "Estonia<br>hello@woipwoodcraft.com<br>Instagram coming soon", menuOpen: "Open menu", menuClose: "Close menu"
+      },
+      fi: {
+        navAbout: "Meistä", navArchive: "Arkisto", navCraft: "Työmme", navContact: "Yhteys",
+        eyebrow: "Valmistettu Virossa", heroTitle: "Huonekaluja,<br>joilla on muisti.", heroLead: "Ajattomia huonekaluja, joissa kohtaavat pohjoismainen muotoilu, puun luonne ja aito käsityöperinne.",
+        viewArchive: "Katso arkisto", getInTouch: "Ota yhteyttä", aboutTitle: "Luonteella tehty. Käsityöhön juurtunut.",
+        aboutLead: "WOIP WOODCRAFT on enemmän kuin huonekaluja. Se on ajattelutapa, jossa mittasuhteet, kestävyys, materiaali ja harkittu toteutus ovat keskeisiä. Meille esineen kuuluu elää tilassa pitkään ja arvokkaasti.",
+        heritage: "Tärkeä osa tätä sivustoa on verstasperintö. Alla olevat käsinkirjoitetut muistiinpanot ja piirustukset perustuvat isäni valmistamiin oikeisiin huonekaluihin. Näissä sivuissa elävät työtavat, mitat, kokemus ja asenne, joista myös WOIP WOODCRAFT kasvaa.",
+        quote: "Käsin piirretty. Kestämään tehty.", archiveLabel: "Verstasarkisto", archiveTitle: "Luonnoksesta huonekaluksi.", archiveLead: "Nämä arkistosivut eivät ole koristeita. Ne ovat aitoja verstaan muistiinpanoja — mittoja, leikkauksia, laatikoita, rakenteita ja valmistusta edeltävää ajattelua. Tällainen käytännöllinen, rehellinen ja perusteellinen käsityö on WOIP WOODCRAFTin tausta.",
+        caption1: "Etukuva", caption2: "Sivukuva", caption3: "Verstasmuistiinpanot", caption4: "Laatikon yksityiskohta", caption5: "Leikkaussuunnitelma", caption6: "Käsin mitattu",
+        craftLabel: "Mitä teemme", craftTitle: "Huonekaluja oikeisiin tiloihin.", craftLead: "WOIP WOODCRAFT keskittyy ajattomiin huonekaluihin, mittatilaustöihin ja yksityiskohtiin, jotka kestävät sekä käytössä että ulkonäöltään.",
+        service1Title: "Huonekalut", service1Text: "Hyllyt, pöydät, kaapit ja muut selkeälinjaiset huonekalut, jotka on tehty pitkäaikaiseen käyttöön.", service2Title: "Mittatilaustyöt", service2Text: "Yksilölliset ratkaisut, joissa huomioidaan tila, mitat, materiaalit ja käyttäjän todelliset tarpeet.", service3Title: "Käsityö", service3Text: "Työtapa, jossa rakenne, tuntuma ja materiaalivalinnat ovat yhtä tärkeitä kuin valmiin esineen ulkonäkö.",
+        statement: "Puu. Käsityö. Luonne.<br>Rauhallisemman tavan huonekaluja.", contactLabel: "Yhteys", contactText: "Kun etsit mittatilaushuonekalua, yhteistyötä tai haluat kysyä esineestä, ota yhteyttä.", contactDetails: "Viro<br>hello@woipwoodcraft.com<br>Instagram tulossa pian", menuOpen: "Avaa valikko", menuClose: "Sulje valikko"
+      }
+    };
+
+    const menuButton = document.querySelector(".menu-button");
+    const nav = document.getElementById("mobileNav");
+
+    function setLanguage(language) {
+      const lang = translations[language] ? language : "et";
+      const text = translations[lang];
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        element.textContent = text[element.dataset.i18n];
+      });
+      document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+        element.innerHTML = text[element.dataset.i18nHtml];
+      });
+      document.querySelectorAll("[data-lang]").forEach((button) => {
+        const active = button.dataset.lang === lang;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+      menuButton.setAttribute("aria-label", nav.classList.contains("show") ? text.menuClose : text.menuOpen);
+      localStorage.setItem("woip-language", lang);
     }
+
+    function toggleMenu() {
+      const isOpen = nav.classList.toggle("show");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", translations[document.documentElement.lang][isOpen ? "menuClose" : "menuOpen"]);
+    }
+
+    menuButton.addEventListener("click", toggleMenu);
+    document.querySelectorAll("[data-lang]").forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
+    nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+      nav.classList.remove("show");
+      menuButton.setAttribute("aria-expanded", "false");
+    }));
+
+    setLanguage(localStorage.getItem("woip-language") || "et");
   </script>
 
 </body>
