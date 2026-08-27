@@ -249,6 +249,65 @@
       letter-spacing: 0.5px;
     }
 
+    .personal-story {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.55fr);
+      gap: clamp(48px, 8vw, 120px);
+      margin-top: 92px;
+      padding-top: 76px;
+      border-top: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .personal-story-heading h2 {
+      margin-bottom: 30px;
+    }
+
+    .heritage-line {
+      max-width: 290px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(140, 107, 63, 0.38);
+      color: var(--accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .personal-story-copy {
+      max-width: 760px;
+      padding-top: 9px;
+    }
+
+    .personal-story-copy p {
+      color: var(--text-soft);
+      font-size: 18px;
+      line-height: 1.95;
+    }
+
+    .personal-story-copy p + p {
+      margin-top: 24px;
+    }
+
+    .personal-story-copy .story-turn {
+      margin: 38px 0 36px;
+      padding: 22px 0 22px 28px;
+      border-left: 2px solid var(--accent);
+      color: var(--dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(24px, 2.5vw, 34px);
+      line-height: 1.35;
+    }
+
+    .personal-story-copy .story-closing {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(140, 107, 63, 0.38);
+      color: var(--dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(25px, 2.7vw, 38px);
+      line-height: 1.35;
+    }
+
     .dark-section {
       background: var(--dark);
       color: white;
@@ -405,9 +464,18 @@
 
     @media (max-width: 920px) {
       .intro-grid,
+      .personal-story,
       .archive-top,
       .contact-grid {
         grid-template-columns: 1fr;
+      }
+
+      .personal-story {
+        gap: 34px;
+      }
+
+      .heritage-line {
+        max-width: 420px;
       }
 
       .archive-grid,
@@ -474,6 +542,43 @@
 
       section {
         padding: 80px 7%;
+      }
+
+      .personal-story {
+        margin-top: 66px;
+        padding-top: 56px;
+        gap: 28px;
+      }
+
+      .personal-story-heading h2 {
+        margin-bottom: 24px;
+      }
+
+      .heritage-line {
+        padding-top: 18px;
+        font-size: 17px;
+      }
+
+      .personal-story-copy {
+        max-width: 40rem;
+        padding-top: 0;
+      }
+
+      .personal-story-copy p {
+        font-size: 17px;
+        line-height: 1.85;
+      }
+
+      .personal-story-copy .story-turn {
+        margin: 32px 0;
+        padding: 18px 0 18px 22px;
+        font-size: 25px;
+      }
+
+      .personal-story-copy .story-closing {
+        margin-top: 40px;
+        padding-top: 24px;
+        font-size: 27px;
       }
 
       .archive-grid,
@@ -545,6 +650,25 @@
         <div class="quote-box">
           <span data-i18n="quote">Käsitsi joonistatud. Kestma loodud.</span>
         </div>
+      </div>
+    </div>
+
+    <div class="personal-story">
+      <div class="personal-story-heading">
+        <div class="section-label" data-i18n="storyLabel">Isiklik lugu</div>
+        <h2 data-i18n="storyTitle">Minust</h2>
+        <p class="heritage-line" data-i18n="storyHeritage">4 põlvkonda tisleritööd — Kaarel · Karl · Vello · Ahto</p>
+      </div>
+
+      <div class="personal-story-copy">
+        <p data-i18n="storyParagraph1">Mu nimi on Ahto. Olen neljanda põlve tisler. Mu vanavanaisa Kaarel oli tisler. Mu vanaisa Karl oli tisler. Mu isa Vello oli tisler.</p>
+        <p data-i18n="storyParagraph2">Puutöö ei ole mu suguvõsas olnud kunagi lihtsalt amet. See on olnud viis elada – aus töö, mis tehakse kätega, mitte jutuga. Noorena õppisin tisleriks ja tegin seda tööd ka päriselt, aga elu viis mind pikaks ajaks mujale. Mitte et oleksin tahtnud. Vaja oli.</p>
+        <p data-i18n="storyParagraph3">Ühel hetkel vestlesin ühe mulle väga kalli ja tähtsa inimesega. Ütlesin muu seas, et tegelikult tahaksin teha puutööd – mööblit, esemeid, asju, mis kestavad. Ta vaatas mulle sügavalt silma ja ütles: „Kui see on see, mida sa tahad teha, siis miks sa raiskad end mujal? Hakka pihta. Täna juba.”</p>
+        <p class="story-turn" data-i18n="storyTurn">Võtsin kuulda. Ja hakkasin.</p>
+        <p data-i18n="storyParagraph4">Täna teen ma puust mööblit ja kõike muud, mida endale või kellelegi tellimustööna vaja on. Igal hommikul lähen töökotta hea tundega. Mitte kohusetundest, vaid tahtmisest ja sellepärast, et huvitav on. Värskelt jahvatatud kohvi ja puidu lõhn segunevad töökojas millekski uskumatult heaks. Ja siis, nautides enne tööle asumist seda head kohvi, mõtlen: veab mul – ma saan ka täna teha seda, mis mind huvitab.</p>
+        <p data-i18n="storyParagraph5">Iga asi, mis mu töökojast välja tuleb, on läbi mu käte käinud. Ma tunnen puidu lõhna, kui seda töötlen. Ma näen, kuidas ta vormi võtab. Ja ma teen nii, et tulemus oleks tugev, aus ja kordumatu. Inimese tehtud. Minu tehtud.</p>
+        <p data-i18n="storyParagraph6">Loodan, et see on mu töödes näha – et inimene, kes mu käest midagi saab, tunneb, et see on tehtud päriselt. Kätega, ajaga ja südamega.</p>
+        <p class="story-closing" data-i18n="storyClosing">Mina teen asja. Sina annad talle kodu ja oma loo.</p>
       </div>
     </div>
   </section>
@@ -655,6 +779,15 @@
         viewArchive: "Vaata arhiivi", getInTouch: "Võta ühendust", aboutTitle: "Iseloomuga loodud. Käsitöös juurdunud.",
         aboutLead: "WOIP WOODCRAFT ei ole lihtsalt mööbel. See on lähenemine, kus tähtsad on proportsioon, kestvus, materjal ja rahulikult läbi mõeldud teostus. Meie jaoks peab ese elama ruumis kaua ja väärikalt.",
         heritage: "Selle lehe üks oluline osa on töökoja pärand. Allpool olevad käsitsi tehtud märkmed ja joonestused põhinevad päris mööbliesemetel, mida minu isa valmistas. Need lehed kannavad endas töövõtteid, mõõte, kogemust ja suhtumist, millest WOIP WOODCRAFT samuti kasvab.",
+        storyLabel: "Isiklik lugu", storyTitle: "Minust", storyHeritage: "4 põlvkonda tisleritööd — Kaarel · Karl · Vello · Ahto",
+        storyParagraph1: "Mu nimi on Ahto. Olen neljanda põlve tisler. Mu vanavanaisa Kaarel oli tisler. Mu vanaisa Karl oli tisler. Mu isa Vello oli tisler.",
+        storyParagraph2: "Puutöö ei ole mu suguvõsas olnud kunagi lihtsalt amet. See on olnud viis elada – aus töö, mis tehakse kätega, mitte jutuga. Noorena õppisin tisleriks ja tegin seda tööd ka päriselt, aga elu viis mind pikaks ajaks mujale. Mitte et oleksin tahtnud. Vaja oli.",
+        storyParagraph3: "Ühel hetkel vestlesin ühe mulle väga kalli ja tähtsa inimesega. Ütlesin muu seas, et tegelikult tahaksin teha puutööd – mööblit, esemeid, asju, mis kestavad. Ta vaatas mulle sügavalt silma ja ütles: „Kui see on see, mida sa tahad teha, siis miks sa raiskad end mujal? Hakka pihta. Täna juba.”",
+        storyTurn: "Võtsin kuulda. Ja hakkasin.",
+        storyParagraph4: "Täna teen ma puust mööblit ja kõike muud, mida endale või kellelegi tellimustööna vaja on. Igal hommikul lähen töökotta hea tundega. Mitte kohusetundest, vaid tahtmisest ja sellepärast, et huvitav on. Värskelt jahvatatud kohvi ja puidu lõhn segunevad töökojas millekski uskumatult heaks. Ja siis, nautides enne tööle asumist seda head kohvi, mõtlen: veab mul – ma saan ka täna teha seda, mis mind huvitab.",
+        storyParagraph5: "Iga asi, mis mu töökojast välja tuleb, on läbi mu käte käinud. Ma tunnen puidu lõhna, kui seda töötlen. Ma näen, kuidas ta vormi võtab. Ja ma teen nii, et tulemus oleks tugev, aus ja kordumatu. Inimese tehtud. Minu tehtud.",
+        storyParagraph6: "Loodan, et see on mu töödes näha – et inimene, kes mu käest midagi saab, tunneb, et see on tehtud päriselt. Kätega, ajaga ja südamega.",
+        storyClosing: "Mina teen asja. Sina annad talle kodu ja oma loo.",
         quote: "Käsitsi joonistatud. Kestma loodud.", archiveLabel: "Töökoja arhiiv", archiveTitle: "Joonisest mööblini.", archiveLead: "Need arhiivilehed ei ole dekoratsioon. Need on päris töökoja märkmed — mõõdud, lõiked, sahtlid, konstruktsioonid ja mõtlemine enne valmimist. Just selline praktiline, aus ja põhjalik käsitöö on WOIP WOODCRAFTi taust.",
         caption1: "Eestvaade", caption2: "Külgvaade", caption3: "Töökoja märkmed", caption4: "Sahtli detail", caption5: "Lõikeplaan", caption6: "Käsitsi mõõdetud",
         craftLabel: "Mida me teeme", craftTitle: "Mööbel päris ruumidesse.", craftLead: "WOIP WOODCRAFT keskendub ajatule mööblile, eritellimustele ja detailidele, mis peavad vastu nii kasutuses kui ka visuaalselt.",
@@ -667,6 +800,15 @@
         viewArchive: "View archive", getInTouch: "Get in touch", aboutTitle: "Built with character. Rooted in craft.",
         aboutLead: "WOIP WOODCRAFT is more than furniture. It is an approach grounded in proportion, durability, material and thoughtfully considered execution. We believe every piece should live in its space with dignity for years.",
         heritage: "An important part of this site is the workshop legacy. The handwritten notes and drawings below are based on real furniture made by my father. These pages carry techniques, measurements, experience and an attitude from which WOIP WOODCRAFT continues to grow.",
+        storyLabel: "A personal story", storyTitle: "About me", storyHeritage: "4 generations of cabinetmaking — Kaarel · Karl · Vello · Ahto",
+        storyParagraph1: "My name is Ahto. I am a fourth-generation cabinetmaker. My great-grandfather Kaarel was a cabinetmaker. My grandfather Karl was a cabinetmaker. My father Vello was a cabinetmaker.",
+        storyParagraph2: "Woodworking has never been just a profession in my family. It has been a way of life – honest work done with your hands, not with talk. When I was young, I trained as a cabinetmaker and worked in the trade for real, but life took me elsewhere for a long time. Not because I wanted it to. It was necessary.",
+        storyParagraph3: "One day I was talking with someone very dear and important to me. Somewhere in the conversation, I said that what I really wanted was to work with wood – to make furniture, objects, things that last. They looked me deep in the eye and said: “If that is what you want to do, why are you wasting yourself elsewhere? Start. Today.”",
+        storyTurn: "I listened. And I began.",
+        storyParagraph4: "Today I make wooden furniture and anything else that I or someone commissioning a piece might need. Every morning I walk into the workshop feeling good. Not out of duty, but because I want to be there and because the work is interesting. The smell of freshly ground coffee mingles with the scent of wood and becomes something unbelievably good. And then, enjoying that coffee before I begin, I think: I am lucky – today, once again, I get to do what interests me.",
+        storyParagraph5: "Everything that leaves my workshop has passed through my hands. I smell the wood as I work it. I watch it take shape. And I make sure the result is strong, honest and one of a kind. Made by a person. Made by me.",
+        storyParagraph6: "I hope you can see that in my work – that when someone receives something from me, they can feel it was truly made. With hands, time and heart.",
+        storyClosing: "I make the piece. You give it a home and a story of your own.",
         quote: "Drawn by hand. Built to last.", archiveLabel: "Workshop archive", archiveTitle: "From sketch to furniture.", archiveLead: "These archive sheets are not decoration. They are genuine workshop notes — dimensions, cuts, drawers, structures and the thinking that happens before a piece is made. This practical, honest and thorough craft is the foundation of WOIP WOODCRAFT.",
         caption1: "Front elevation", caption2: "Side view", caption3: "Workshop notes", caption4: "Drawer detail", caption5: "Cutting plan", caption6: "Measured by hand",
         craftLabel: "What we do", craftTitle: "Furniture made for real spaces.", craftLead: "WOIP WOODCRAFT focuses on timeless furniture, bespoke work and details that endure both in use and in appearance.",
@@ -679,6 +821,15 @@
         viewArchive: "Katso arkisto", getInTouch: "Ota yhteyttä", aboutTitle: "Luonteella tehty. Käsityöhön juurtunut.",
         aboutLead: "WOIP WOODCRAFT on enemmän kuin huonekaluja. Se on ajattelutapa, jossa mittasuhteet, kestävyys, materiaali ja harkittu toteutus ovat keskeisiä. Meille esineen kuuluu elää tilassa pitkään ja arvokkaasti.",
         heritage: "Tärkeä osa tätä sivustoa on verstasperintö. Alla olevat käsinkirjoitetut muistiinpanot ja piirustukset perustuvat isäni valmistamiin oikeisiin huonekaluihin. Näissä sivuissa elävät työtavat, mitat, kokemus ja asenne, joista myös WOIP WOODCRAFT kasvaa.",
+        storyLabel: "Henkilökohtainen tarina", storyTitle: "Minusta", storyHeritage: "4 sukupolvea puusepäntyötä — Kaarel · Karl · Vello · Ahto",
+        storyParagraph1: "Nimeni on Ahto. Olen neljännen polven puuseppä. Isoisäni isä Kaarel oli puuseppä. Isoisäni Karl oli puuseppä. Isäni Vello oli puuseppä.",
+        storyParagraph2: "Puutyö ei ole koskaan ollut suvussani pelkkä ammatti. Se on ollut tapa elää – rehellistä työtä, joka tehdään käsillä eikä puheilla. Nuorena kouluttauduin puusepäksi ja tein sitä työtä ihan oikeasti, mutta elämä vei minut pitkäksi aikaa muualle. Ei siksi, että olisin halunnut. Oli pakko.",
+        storyParagraph3: "Kerran keskustelin erään minulle hyvin rakkaan ja tärkeän ihmisen kanssa. Sanoin siinä sivussa, että oikeastaan haluaisin tehdä puutöitä – huonekaluja, esineitä, asioita, jotka kestävät. Hän katsoi minua syvälle silmiin ja sanoi: ”Jos se on sitä, mitä haluat tehdä, miksi tuhlaat itseäsi muualla? Aloita. Jo tänään.”",
+        storyTurn: "Kuuntelin. Ja aloitin.",
+        storyParagraph4: "Nykyään teen puusta huonekaluja ja kaikkea muutakin, mitä itse tarvitsen tai mitä joku minulta tilaa. Menen joka aamu verstaalle hyvillä mielin. En velvollisuudesta vaan siksi, että haluan ja koska työ on kiinnostavaa. Vastajauhetun kahvin ja puun tuoksut sekoittuvat verstaalla joksikin uskomattoman hyväksi. Ja kun nautin hyvästä kahvista ennen työn aloittamista, ajattelen: minulla käy tuuri – saan tänäänkin tehdä sitä, mikä minua kiinnostaa.",
+        storyParagraph5: "Jokainen verstaaltani lähtevä esine on kulkenut käsieni kautta. Tunnen puun tuoksun työstäessäni sitä. Näen, kuinka se saa muotonsa. Ja teen työni niin, että lopputulos on vahva, rehellinen ja ainutkertainen. Ihmisen tekemä. Minun tekemäni.",
+        storyParagraph6: "Toivon, että se näkyy töissäni – että ihminen, joka saa minulta jotakin, tuntee sen olevan tehty oikeasti. Käsillä, ajalla ja sydämellä.",
+        storyClosing: "Minä teen esineen. Sinä annat sille kodin ja oman tarinasi.",
         quote: "Käsin piirretty. Kestämään tehty.", archiveLabel: "Verstasarkisto", archiveTitle: "Luonnoksesta huonekaluksi.", archiveLead: "Nämä arkistosivut eivät ole koristeita. Ne ovat aitoja verstaan muistiinpanoja — mittoja, leikkauksia, laatikoita, rakenteita ja valmistusta edeltävää ajattelua. Tällainen käytännöllinen, rehellinen ja perusteellinen käsityö on WOIP WOODCRAFTin tausta.",
         caption1: "Etukuva", caption2: "Sivukuva", caption3: "Verstasmuistiinpanot", caption4: "Laatikon yksityiskohta", caption5: "Leikkaussuunnitelma", caption6: "Käsin mitattu",
         craftLabel: "Mitä teemme", craftTitle: "Huonekaluja oikeisiin tiloihin.", craftLead: "WOIP WOODCRAFT keskittyy ajattomiin huonekaluihin, mittatilaustöihin ja yksityiskohtiin, jotka kestävät sekä käytössä että ulkonäöltään.",
